@@ -3,7 +3,7 @@ from scipy import stats
 
 class MLPModel(object):
     
-    def __init__(self, hidden_layer_sizes=(5,2)):
+    def __init__(self,hidden_layer_sizes,activation,solver,learning_rate,learning_rate_init,max_iter,tol,momentum):
         self.model = neural_network.MLPClassifier(hidden_layer_sizes,activation,solver,learning_rate,learning_rate_init,max_iter,tol,momentum)
     
     def train(self, X_train, y_train):
@@ -17,7 +17,7 @@ class MLPModel(object):
 
 class KNNModel(object):
     
-    def __init__(self, k, weights='distance'):
+    def __init__(self, n_neighbors, weights, algorithm):
         self.model = neighbors.KNeighborsClassifier(n_neighbors, weights, algorithm)
 
     def train(self, X_train, y_train):

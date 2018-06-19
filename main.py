@@ -41,13 +41,13 @@ def main():
         
         # Constroi o conjunto de dados
         X,y = training_alg.create_data_set(args.images_path, classifier)
-        
-        # Treina segundo opções do usuário
+
+        # Se o usuário escolheu cross validation, executa o teste
         if (args.cross_validate == 'yes'):
             training_alg.test_accuracy(X,y,args.num_folds,classifier)
-       
-        else:
-            classifier.train(X,y)
+        
+        # Treina o modelo
+        classifier.train(X,y)
             
         builder.save_classifier(args.classifier_file+'.trained',classifier)
         

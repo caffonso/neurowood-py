@@ -17,8 +17,9 @@ def create_data_set(path_to_folder, classifier_obj):
     label_list  = []
     
     print("Creating data set...")
-    print("Path to images: " + path_to_folder)
-    
+    print("\tPath to images: " + path_to_folder)
+    print("\tReading images...")    
+
     # Itera pela listagem de nomes do diretório
     # Supõe que existem apenas as imagens etiquetadas
     for name in os.listdir(path_to_folder):
@@ -45,9 +46,8 @@ def create_data_set(path_to_folder, classifier_obj):
     # Converte explicitamente as listas com todas as amostras e etiquetas
     X = np.array(sample_list, dtype=float)
     X = np.concatenate(sample_list, axis=0)
-    y = np.array(label_list, dtype=int)
-    
-    print("Read %d images" % X.ndim)
+    y = np.array(label_list, dtype=int)  
+    print("\t\tRead %d images" % y.size)
     
     return (X, y)
 
@@ -87,10 +87,11 @@ def load_data_set(filepath):
 def test_accuracy(X,y,n_splits,classifier_obj):
     
     print("Evaluating classifier precision:")
-    print("Performing k-fold cross validation...")
-    print("k value = " + str(n_splits))
+    print("\tPerforming k-fold cross validation:")
+    print("\tThis may take a while...")
+    print("\tk value = " + str(n_splits))
     
     scores = cross_val_score(classifier_obj.model,X,y,cv=n_splits)
     scores = np.mean(scores)*100.0
-    print("Accuracy score: %.2f" % scores)
+    print("\tAccuracy score: %.2f%" % scores)
     return scores

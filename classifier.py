@@ -60,6 +60,11 @@ class Classifier(object):
 
 #
     def train(self, X_train, y_train):
+        print("Training classifier...")
+        print("\tNumber of samples: %d" % y_train.size)        
+        print("\tThis may take a while...")
         self.X = X_train
         self.y = y_train
         self.model.fit(self.X, self.y)
+        print("\tTraining complete!")
+        
