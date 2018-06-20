@@ -1,6 +1,11 @@
 import numpy as np
 from skimage import feature
 
+##  @package ftr_extraction
+#
+#   Defines image features extraction methods
+
+##  Gray Level Co-occurrence Matrix
 class GLCM:
         def __init__(self, axis=[0, np.pi/4]):
             #
@@ -36,6 +41,7 @@ class GLCM:
         def calculate(self,image):
             return self.allFeatures(image)
 
+##  Local Binary Patterns
 class LocalBinaryPatterns:
     def __init__(self, numPoints=24, radius=8, method="uniform"):
         # store the number of points and radius

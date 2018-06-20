@@ -68,8 +68,8 @@ def main():
         
         # Cria thread pool
         thread_pool = []
-        thread_pool.append(system_sim.produtor_de_imagem(full_path_filename_list, image_q))
-        thread_pool.append(system_sim.consumidor_de_imagem(classifier,image_q, label_q))
+        thread_pool.append(system_sim.image_producer(full_path_filename_list, image_q))
+        thread_pool.append(system_sim.image_consumer(classifier,image_q, label_q))
         
         # Inicia threads
         for t in thread_pool:

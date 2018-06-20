@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['_5f_5finit_5f_5f',['__init__',['../classclassifier_1_1_classifier.html#afe3f298d174edc880684ba282cf69785',1,'classifier.Classifier.__init__()'],['../classclassifier__builder_1_1_classifier_builder.html#a317121a8f9326d3a30dea3c8d6da4a2e',1,'classifier_builder.ClassifierBuilder.__init__()'],['../classimg__processing_1_1_dummy_filter.html#ae303a2f6facd4a72d79030ec9551a36d',1,'img_processing.DummyFilter.__init__()'],['../classmodel_1_1_m_l_p_model.html#af9eb7cda208eabb7ec7c91b7064d3769',1,'model.MLPModel.__init__()'],['../classmodel_1_1_k_n_n_model.html#adf9dfe4873a42c286cf74ce993eb9cc5',1,'model.KNNModel.__init__()'],['../classsystem__sim_1_1image__producer.html#a7940e350c5245174c46bcd631393898e',1,'system_sim.image_producer.__init__()'],['../classsystem__sim_1_1image__consumer.html#a525e8c9e9b3f00bb4fd4ad66389bebc4',1,'system_sim.image_consumer.__init__()']]]
+];

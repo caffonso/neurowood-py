@@ -1,0 +1,46 @@
+\hypertarget{classsystem__sim_1_1image__producer}{}\section{system\+\_\+sim.\+image\+\_\+producer Class Reference}
+\label{classsystem__sim_1_1image__producer}\index{system\+\_\+sim.\+image\+\_\+producer@{system\+\_\+sim.\+image\+\_\+producer}}
+
+
+Reads image from selected source and put them in queue for classification.  
+
+
+
+
+Inherits Thread.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__producer_a7940e350c5245174c46bcd631393898e}\label{classsystem__sim_1_1image__producer_a7940e350c5245174c46bcd631393898e}} 
+def \mbox{\hyperlink{classsystem__sim_1_1image__producer_a7940e350c5245174c46bcd631393898e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, img\+\_\+source, output\+\_\+q)
+\begin{DoxyCompactList}\small\item\em Class constructor Args\+: img\+\_\+source\+: Path to images; ~\newline
+ output\+\_\+q\+: Queue to put images as numpy array;. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__producer_a19f4aa078433403077e62a600530603b}\label{classsystem__sim_1_1image__producer_a19f4aa078433403077e62a600530603b}} 
+def \mbox{\hyperlink{classsystem__sim_1_1image__producer_a19f4aa078433403077e62a600530603b}{run}} (self)
+\begin{DoxyCompactList}\small\item\em Start thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__producer_ad7500fdbaf9e9b47b80751c0c37b5a83}\label{classsystem__sim_1_1image__producer_ad7500fdbaf9e9b47b80751c0c37b5a83}} 
+def \mbox{\hyperlink{classsystem__sim_1_1image__producer_ad7500fdbaf9e9b47b80751c0c37b5a83}{join}} (self, timeout=None)
+\begin{DoxyCompactList}\small\item\em Join method to end thread activities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__producer_aafc661c06504288d0feab78515766bff}\label{classsystem__sim_1_1image__producer_aafc661c06504288d0feab78515766bff}} 
+{\bfseries filename\+\_\+list}
+\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__producer_ac8d2a34dc50113063bc9154ab5cdb2d5}\label{classsystem__sim_1_1image__producer_ac8d2a34dc50113063bc9154ab5cdb2d5}} 
+{\bfseries output\+\_\+q}
+\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__producer_aa87d2ee4e59aa54ce7060d1b132724f7}\label{classsystem__sim_1_1image__producer_aa87d2ee4e59aa54ce7060d1b132724f7}} 
+{\bfseries stop\+\_\+request}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Reads image from selected source and put them in queue for classification. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+system\+\_\+sim.\+py\end{DoxyCompactItemize}

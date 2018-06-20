@@ -1,0 +1,104 @@
+\hypertarget{classclassifier_1_1_classifier}{}\section{classifier.\+Classifier Class Reference}
+\label{classclassifier_1_1_classifier}\index{classifier.\+Classifier@{classifier.\+Classifier}}
+
+
+The \mbox{\hyperlink{classclassifier_1_1_classifier}{Classifier}} class is the main object in the classification process.  
+
+
+
+
+Inherits object.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classclassifier_1_1_classifier_afe3f298d174edc880684ba282cf69785}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, model\+\_\+obj, extractor\+\_\+obj\+\_\+list, img\+\_\+proc\+\_\+obj\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclassifier_1_1_classifier_ab5738cbcf0446b4b0432022e456f940e}{classify\+\_\+img}} (self, img)
+\begin{DoxyCompactList}\small\item\em Takes a image and returns it\textquotesingle{}s predicted label. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclassifier_1_1_classifier_aec9c4f80b858660a2ac85226e56670a1}{predict}} (self, sample)
+\begin{DoxyCompactList}\small\item\em Takes a image descriptor and returns it\textquotesingle{}s predicted label. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclassifier_1_1_classifier_af8f6cb74f105de67966fed3bece2c77b}{describe\+\_\+img}} (self, img)
+\begin{DoxyCompactList}\small\item\em Asks classifier to describe a image, but not to predict it\textquotesingle{}s label. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclassifier_1_1_classifier_a6113499eedf79694730f3bbb36958aee}{train}} (self, X\+\_\+train, y\+\_\+train)
+\begin{DoxyCompactList}\small\item\em Train the classifier model using provided data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classclassifier_1_1_classifier_a5698b69d59b3cddf3be2f4926cbc38e3}\label{classclassifier_1_1_classifier_a5698b69d59b3cddf3be2f4926cbc38e3}} 
+{\bfseries model}
+\item 
+\mbox{\Hypertarget{classclassifier_1_1_classifier_aa254cd2ab507a382749321697a009ec9}\label{classclassifier_1_1_classifier_aa254cd2ab507a382749321697a009ec9}} 
+{\bfseries extractor\+\_\+list}
+\item 
+\mbox{\Hypertarget{classclassifier_1_1_classifier_aa8991f94cfa538f18d71ff2ea8d97025}\label{classclassifier_1_1_classifier_aa8991f94cfa538f18d71ff2ea8d97025}} 
+{\bfseries img\+\_\+proc\+\_\+list}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \mbox{\hyperlink{classclassifier_1_1_classifier}{Classifier}} class is the main object in the classification process. 
+
+This class purpose is to set classifier behavior, so that different classifier configurations choosen by the user can be used the same way.
+
+Notice that \mbox{\hyperlink{classclassifier_1_1_classifier}{Classifier}} specializations are handled by the \mbox{\hyperlink{namespaceclassifier__builder}{classifier\+\_\+builder}} module. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classclassifier_1_1_classifier_afe3f298d174edc880684ba282cf69785}\label{classclassifier_1_1_classifier_afe3f298d174edc880684ba282cf69785}} 
+\index{classifier\+::\+Classifier@{classifier\+::\+Classifier}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!classifier\+::\+Classifier@{classifier\+::\+Classifier}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def classifier.\+Classifier.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{model\+\_\+obj,  }\item[{}]{extractor\+\_\+obj\+\_\+list,  }\item[{}]{img\+\_\+proc\+\_\+obj\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Class constructor. 
+
+Args\+: model\+\_\+obj\+: A model object. See model; extractor\+\_\+obj\+\_\+list\+: A list of feature extraction objects. See \mbox{\hyperlink{namespaceftr__extraction}{ftr\+\_\+extraction}}; img\+\_\+proc\+\_\+obj\+\_\+list\+: A list of image processing operation objects. See \mbox{\hyperlink{namespaceimg__processing}{img\+\_\+processing}}; 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classclassifier_1_1_classifier_ab5738cbcf0446b4b0432022e456f940e}\label{classclassifier_1_1_classifier_ab5738cbcf0446b4b0432022e456f940e}} 
+\index{classifier\+::\+Classifier@{classifier\+::\+Classifier}!classify\+\_\+img@{classify\+\_\+img}}
+\index{classify\+\_\+img@{classify\+\_\+img}!classifier\+::\+Classifier@{classifier\+::\+Classifier}}
+\subsubsection{\texorpdfstring{classify\+\_\+img()}{classify\_img()}}
+{\footnotesize\ttfamily def classifier.\+Classifier.\+classify\+\_\+img (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{img }\end{DoxyParamCaption})}
+
+
+
+Takes a image and returns it\textquotesingle{}s predicted label. 
+
+Args\+: img\+: Image loaded as numpy array; Returns\+: label\+: Predicted label; \mbox{\Hypertarget{classclassifier_1_1_classifier_af8f6cb74f105de67966fed3bece2c77b}\label{classclassifier_1_1_classifier_af8f6cb74f105de67966fed3bece2c77b}} 
+\index{classifier\+::\+Classifier@{classifier\+::\+Classifier}!describe\+\_\+img@{describe\+\_\+img}}
+\index{describe\+\_\+img@{describe\+\_\+img}!classifier\+::\+Classifier@{classifier\+::\+Classifier}}
+\subsubsection{\texorpdfstring{describe\+\_\+img()}{describe\_img()}}
+{\footnotesize\ttfamily def classifier.\+Classifier.\+describe\+\_\+img (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{img }\end{DoxyParamCaption})}
+
+
+
+Asks classifier to describe a image, but not to predict it\textquotesingle{}s label. 
+
+Args\+: img\+: Image loaded as numpy array; Returns\+: descriptor\+: Image features; \mbox{\Hypertarget{classclassifier_1_1_classifier_aec9c4f80b858660a2ac85226e56670a1}\label{classclassifier_1_1_classifier_aec9c4f80b858660a2ac85226e56670a1}} 
+\index{classifier\+::\+Classifier@{classifier\+::\+Classifier}!predict@{predict}}
+\index{predict@{predict}!classifier\+::\+Classifier@{classifier\+::\+Classifier}}
+\subsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily def classifier.\+Classifier.\+predict (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{sample }\end{DoxyParamCaption})}
+
+
+
+Takes a image descriptor and returns it\textquotesingle{}s predicted label. 
+
+Args\+: sample\+: Image features; Returns\+: label\+: Predicted label; \mbox{\Hypertarget{classclassifier_1_1_classifier_a6113499eedf79694730f3bbb36958aee}\label{classclassifier_1_1_classifier_a6113499eedf79694730f3bbb36958aee}} 
+\index{classifier\+::\+Classifier@{classifier\+::\+Classifier}!train@{train}}
+\index{train@{train}!classifier\+::\+Classifier@{classifier\+::\+Classifier}}
+\subsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily def classifier.\+Classifier.\+train (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{X\+\_\+train,  }\item[{}]{y\+\_\+train }\end{DoxyParamCaption})}
+
+
+
+Train the classifier model using provided data. 
+
+Args\+: X\+\_\+train\+: Numpy bidimensional array containing a vector of features for each image. y\+\_\+train\+: Numpy column array with a int value for the label of corresponding element in X. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+classifier.\+py\end{DoxyCompactItemize}

@@ -1,0 +1,114 @@
+\hypertarget{classclassifier__builder_1_1_classifier_builder}{}\section{classifier\+\_\+builder.\+Classifier\+Builder Class Reference}
+\label{classclassifier__builder_1_1_classifier_builder}\index{classifier\+\_\+builder.\+Classifier\+Builder@{classifier\+\_\+builder.\+Classifier\+Builder}}
+
+
+Classifier builder class.  
+
+
+
+
+Inherits object.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classclassifier__builder_1_1_classifier_builder_a317121a8f9326d3a30dea3c8d6da4a2e}\label{classclassifier__builder_1_1_classifier_builder_a317121a8f9326d3a30dea3c8d6da4a2e}} 
+def \mbox{\hyperlink{classclassifier__builder_1_1_classifier_builder_a317121a8f9326d3a30dea3c8d6da4a2e}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclassifier__builder_1_1_classifier_builder_aba174f3d7f78237e9a1bc53c8cb61109}{load\+\_\+classifier}} (self, filepath)
+\begin{DoxyCompactList}\small\item\em Load classifier from file. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclassifier__builder_1_1_classifier_builder_a3a7bc9a4619d927546fc82464767cd8a}{save\+\_\+classifier}} (self, filepath, classifier\+\_\+obj)
+\begin{DoxyCompactList}\small\item\em Save classifier to file. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclassifier__builder_1_1_classifier_builder_aa98a1ccc17d5be35f9b9a8762f19714b}{parse\+\_\+arguments}} (self, args)
+\begin{DoxyCompactList}\small\item\em Splits arguments taken from the parser. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclassifier__builder_1_1_classifier_builder_a2a0e440e5571f9b38fc72ecc5b649031}{build\+\_\+model\+\_\+obj}} (self, param)
+\begin{DoxyCompactList}\small\item\em Use pre parsed parameters to build specified classifier. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclassifier__builder_1_1_classifier_builder_a11c5a2c5d6d8bf7c820b72f3f90114fe}{build\+\_\+feature\+\_\+extractor\+\_\+obj}} (self, param\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Handles feature extraction objects creation. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclassifier__builder_1_1_classifier_builder_a1c124dd02af8615f45da7099e53a06bc}{build\+\_\+img\+\_\+processing\+\_\+obj}} (self, param\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Handles image processing objects creation. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classclassifier__builder_1_1_classifier_builder_a20430f35e6efbabb66b55f61318046ba}{build\+\_\+classifier}} (self, param)
+\begin{DoxyCompactList}\small\item\em Handles creation and bundling of Classifier object parts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classifier builder class. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classclassifier__builder_1_1_classifier_builder_a20430f35e6efbabb66b55f61318046ba}\label{classclassifier__builder_1_1_classifier_builder_a20430f35e6efbabb66b55f61318046ba}} 
+\index{classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}!build\+\_\+classifier@{build\+\_\+classifier}}
+\index{build\+\_\+classifier@{build\+\_\+classifier}!classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}}
+\subsubsection{\texorpdfstring{build\+\_\+classifier()}{build\_classifier()}}
+{\footnotesize\ttfamily def classifier\+\_\+builder.\+Classifier\+Builder.\+build\+\_\+classifier (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{param }\end{DoxyParamCaption})}
+
+
+
+Handles creation and bundling of Classifier object parts. 
+
+Args\+: param\+: Arguments dicitonary list; Returns\+: classifier\+\_\+obj\+: Classifier object ready for training; \mbox{\Hypertarget{classclassifier__builder_1_1_classifier_builder_a11c5a2c5d6d8bf7c820b72f3f90114fe}\label{classclassifier__builder_1_1_classifier_builder_a11c5a2c5d6d8bf7c820b72f3f90114fe}} 
+\index{classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}!build\+\_\+feature\+\_\+extractor\+\_\+obj@{build\+\_\+feature\+\_\+extractor\+\_\+obj}}
+\index{build\+\_\+feature\+\_\+extractor\+\_\+obj@{build\+\_\+feature\+\_\+extractor\+\_\+obj}!classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}}
+\subsubsection{\texorpdfstring{build\+\_\+feature\+\_\+extractor\+\_\+obj()}{build\_feature\_extractor\_obj()}}
+{\footnotesize\ttfamily def classifier\+\_\+builder.\+Classifier\+Builder.\+build\+\_\+feature\+\_\+extractor\+\_\+obj (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{param\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Handles feature extraction objects creation. 
+
+Args\+: param\+\_\+list\+: Parameters dicitonary list; Returns\+: object\+\_\+list\+: List of feature extraction objects; \mbox{\Hypertarget{classclassifier__builder_1_1_classifier_builder_a1c124dd02af8615f45da7099e53a06bc}\label{classclassifier__builder_1_1_classifier_builder_a1c124dd02af8615f45da7099e53a06bc}} 
+\index{classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}!build\+\_\+img\+\_\+processing\+\_\+obj@{build\+\_\+img\+\_\+processing\+\_\+obj}}
+\index{build\+\_\+img\+\_\+processing\+\_\+obj@{build\+\_\+img\+\_\+processing\+\_\+obj}!classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}}
+\subsubsection{\texorpdfstring{build\+\_\+img\+\_\+processing\+\_\+obj()}{build\_img\_processing\_obj()}}
+{\footnotesize\ttfamily def classifier\+\_\+builder.\+Classifier\+Builder.\+build\+\_\+img\+\_\+processing\+\_\+obj (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{param\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Handles image processing objects creation. 
+
+Args\+: param\+\_\+list\+: Parameters dicitonary list; Returns\+: object\+\_\+list\+: List of image processing objects; \mbox{\Hypertarget{classclassifier__builder_1_1_classifier_builder_a2a0e440e5571f9b38fc72ecc5b649031}\label{classclassifier__builder_1_1_classifier_builder_a2a0e440e5571f9b38fc72ecc5b649031}} 
+\index{classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}!build\+\_\+model\+\_\+obj@{build\+\_\+model\+\_\+obj}}
+\index{build\+\_\+model\+\_\+obj@{build\+\_\+model\+\_\+obj}!classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}}
+\subsubsection{\texorpdfstring{build\+\_\+model\+\_\+obj()}{build\_model\_obj()}}
+{\footnotesize\ttfamily def classifier\+\_\+builder.\+Classifier\+Builder.\+build\+\_\+model\+\_\+obj (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{param }\end{DoxyParamCaption})}
+
+
+
+Use pre parsed parameters to build specified classifier. 
+
+Args\+: param\+: Parameters dicitonary list; Returns\+: classifier\+\_\+obj\+: Model object; \mbox{\Hypertarget{classclassifier__builder_1_1_classifier_builder_aba174f3d7f78237e9a1bc53c8cb61109}\label{classclassifier__builder_1_1_classifier_builder_aba174f3d7f78237e9a1bc53c8cb61109}} 
+\index{classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}!load\+\_\+classifier@{load\+\_\+classifier}}
+\index{load\+\_\+classifier@{load\+\_\+classifier}!classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}}
+\subsubsection{\texorpdfstring{load\+\_\+classifier()}{load\_classifier()}}
+{\footnotesize\ttfamily def classifier\+\_\+builder.\+Classifier\+Builder.\+load\+\_\+classifier (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filepath }\end{DoxyParamCaption})}
+
+
+
+Load classifier from file. 
+
+Args\+: filepath\+: Classifier file; Returns\+: classifier\+\_\+obj\+: Classifier object; \mbox{\Hypertarget{classclassifier__builder_1_1_classifier_builder_aa98a1ccc17d5be35f9b9a8762f19714b}\label{classclassifier__builder_1_1_classifier_builder_aa98a1ccc17d5be35f9b9a8762f19714b}} 
+\index{classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}!parse\+\_\+arguments@{parse\+\_\+arguments}}
+\index{parse\+\_\+arguments@{parse\+\_\+arguments}!classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}}
+\subsubsection{\texorpdfstring{parse\+\_\+arguments()}{parse\_arguments()}}
+{\footnotesize\ttfamily def classifier\+\_\+builder.\+Classifier\+Builder.\+parse\+\_\+arguments (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+
+
+Splits arguments taken from the parser. 
+
+Args\+: args\+: Argument object. Returns\+: args\+\_\+dict\+\_\+list\+: A list of dictionaries, one for each object composing the classifier. \mbox{\Hypertarget{classclassifier__builder_1_1_classifier_builder_a3a7bc9a4619d927546fc82464767cd8a}\label{classclassifier__builder_1_1_classifier_builder_a3a7bc9a4619d927546fc82464767cd8a}} 
+\index{classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}!save\+\_\+classifier@{save\+\_\+classifier}}
+\index{save\+\_\+classifier@{save\+\_\+classifier}!classifier\+\_\+builder\+::\+Classifier\+Builder@{classifier\+\_\+builder\+::\+Classifier\+Builder}}
+\subsubsection{\texorpdfstring{save\+\_\+classifier()}{save\_classifier()}}
+{\footnotesize\ttfamily def classifier\+\_\+builder.\+Classifier\+Builder.\+save\+\_\+classifier (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{filepath,  }\item[{}]{classifier\+\_\+obj }\end{DoxyParamCaption})}
+
+
+
+Save classifier to file. 
+
+Args\+: filepath\+: Classifier file. Returns\+: classifier\+\_\+obj\+: Classifier object 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+classifier\+\_\+builder.\+py\end{DoxyCompactItemize}

@@ -17,15 +17,16 @@ import img_processing
 import system_sim
 
 
-# GUI definition
-# This program purpose is to:
-# Show avaliable actions
-# Show avaliable parameters
-# Set default values    
+##  @package parser
+#
+#   Visual argument parser to assist in classifier usage.
+
+##  A GooeyParser definition.
+#   
+#   See more on: https://github.com/chriskiehl/Gooey
 @Gooey
 def gui_parser():
     parser = GooeyParser(description='Create or train a classifier')
-    
     
     subparser = parser.add_subparsers()
 

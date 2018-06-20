@@ -1,0 +1,67 @@
+\hypertarget{namespacetraining__alg}{}\section{training\+\_\+alg Namespace Reference}
+\label{namespacetraining__alg}\index{training\+\_\+alg@{training\+\_\+alg}}
+
+
+This module defines functions to support classifier training.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacetraining__alg_a1b1bb425cd94ca0358c835ae1968470b}{label\+\_\+map}} (char)
+\begin{DoxyCompactList}\small\item\em Auxiliar function. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacetraining__alg_ab0dcf58728275d92e36a03d7ec3189b1}{create\+\_\+data\+\_\+set}} (path\+\_\+to\+\_\+folder, classifier\+\_\+obj)
+\begin{DoxyCompactList}\small\item\em Read images from specified path. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{namespacetraining__alg_aab0eb2ef6247a13da63fd3717fbf7739}{test\+\_\+accuracy}} (X, y, n\+\_\+splits, classifier\+\_\+obj)
+\begin{DoxyCompactList}\small\item\em k-\/\+Fold cross-\/validation to evaluate a classifier performance given the sample and label sets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module defines functions to support classifier training. 
+
+Includes data set handling and classifier accuracy evaluation. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacetraining__alg_ab0dcf58728275d92e36a03d7ec3189b1}\label{namespacetraining__alg_ab0dcf58728275d92e36a03d7ec3189b1}} 
+\index{training\+\_\+alg@{training\+\_\+alg}!create\+\_\+data\+\_\+set@{create\+\_\+data\+\_\+set}}
+\index{create\+\_\+data\+\_\+set@{create\+\_\+data\+\_\+set}!training\+\_\+alg@{training\+\_\+alg}}
+\subsubsection{\texorpdfstring{create\+\_\+data\+\_\+set()}{create\_data\_set()}}
+{\footnotesize\ttfamily def training\+\_\+alg.\+create\+\_\+data\+\_\+set (\begin{DoxyParamCaption}\item[{}]{path\+\_\+to\+\_\+folder,  }\item[{}]{classifier\+\_\+obj }\end{DoxyParamCaption})}
+
+
+
+Read images from specified path. 
+
+Extracts images descriptors and labels.
+
+This function takes the path to an image set and a classifier object. It extracts features according to the feature extractor configured in classifier.
+
+The labels are assigned from the first character in the images filename. A image named A1.\+bmp will be interpreted as a representative of class \char`\"{}0\char`\"{}, B156.\+bmp is labed as being of class \char`\"{}1\char`\"{}, C will be labeled as class \char`\"{}2\char`\"{} and so forth.
+
+Args\+: path\+\_\+to\+\_\+folder\+: String containing the path of images source folder. classifier\+\_\+obj\+: Existing classifier object. See classifier.\+py.
+
+Returns\+: X\+: Numpy bidimensional array containing a vector of features for each image. y\+: Numpy column array with a int value for the label of corresponding element in X. \mbox{\Hypertarget{namespacetraining__alg_a1b1bb425cd94ca0358c835ae1968470b}\label{namespacetraining__alg_a1b1bb425cd94ca0358c835ae1968470b}} 
+\index{training\+\_\+alg@{training\+\_\+alg}!label\+\_\+map@{label\+\_\+map}}
+\index{label\+\_\+map@{label\+\_\+map}!training\+\_\+alg@{training\+\_\+alg}}
+\subsubsection{\texorpdfstring{label\+\_\+map()}{label\_map()}}
+{\footnotesize\ttfamily def training\+\_\+alg.\+label\+\_\+map (\begin{DoxyParamCaption}\item[{}]{char }\end{DoxyParamCaption})}
+
+
+
+Auxiliar function. 
+
+Converts label as characters in filename to int values.
+
+Notice that this allows a maximum of 26 different classes. \mbox{\Hypertarget{namespacetraining__alg_aab0eb2ef6247a13da63fd3717fbf7739}\label{namespacetraining__alg_aab0eb2ef6247a13da63fd3717fbf7739}} 
+\index{training\+\_\+alg@{training\+\_\+alg}!test\+\_\+accuracy@{test\+\_\+accuracy}}
+\index{test\+\_\+accuracy@{test\+\_\+accuracy}!training\+\_\+alg@{training\+\_\+alg}}
+\subsubsection{\texorpdfstring{test\+\_\+accuracy()}{test\_accuracy()}}
+{\footnotesize\ttfamily def training\+\_\+alg.\+test\+\_\+accuracy (\begin{DoxyParamCaption}\item[{}]{X,  }\item[{}]{y,  }\item[{}]{n\+\_\+splits,  }\item[{}]{classifier\+\_\+obj }\end{DoxyParamCaption})}
+
+
+
+k-\/\+Fold cross-\/validation to evaluate a classifier performance given the sample and label sets. 
+
+Args\+: X\+: Sample descriptors set. y\+: Label set. n\+\_\+splits\+: Number of splits to the data sets. classifier\+\_\+obj\+: A classifier object.
+
+Returns\+: scores\+: Avarage classifier accuracy in percentage. 

@@ -1,0 +1,35 @@
+Instruções para instalação:
+
+O programa utiliza python versão >= 3. Tenha certeza de que python3 está instalado:
+
+	$ python --version
+
+Caso sua versão seja inferior, faça o upgrade instalando o pacote python3.
+
+Faça download do código https://www.youtube.com/watch?v=qu577tNp1hAfonte através do git:
+
+	$ git clone https://github.com/lprati/neurowood-py
+
+Utilizando o pip, instale os pacotes de computação científica:
+
+	$ sudo pip numpy scipy sklearn scikit-image
+
+A interface gráfica depende do módulo Gooey. Por sua vez, o Gooey depende de uma versão específica do wxPython (4.0.0b1). Para evitar problemas com dependências do Gooey, instale o wxPython com o comando:
+
+	$ sudo pip install https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-	16.04/wxPython-4.0.0b1-cp36-cp36m-linux_x86_64.whl phoenix
+
+Utilizando o gerenciador de pacotes (pacman, apt, etc), instale as dependências do wx:
+
+	$ sudo pacman -S libpng12 
+
+Prossiga instalando o gooey
+
+	$ sudo pip install gooey
+
+Acesse o diretório contendo o código:
+	
+	$ cd neurowood-py
+
+Execute o arquivo main.py:
+
+	$ python main.py

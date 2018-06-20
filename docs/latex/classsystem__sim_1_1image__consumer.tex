@@ -1,0 +1,58 @@
+\hypertarget{classsystem__sim_1_1image__consumer}{}\section{system\+\_\+sim.\+image\+\_\+consumer Class Reference}
+\label{classsystem__sim_1_1image__consumer}\index{system\+\_\+sim.\+image\+\_\+consumer@{system\+\_\+sim.\+image\+\_\+consumer}}
+
+
+Reads images from input image queue and puts resulting classification in the output label queue.  
+
+
+
+
+Inherits Thread.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classsystem__sim_1_1image__consumer_a525e8c9e9b3f00bb4fd4ad66389bebc4}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, classifier\+\_\+obj, input\+\_\+q, output\+\_\+q)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__consumer_a7a3db58321c0b528453d50a8695eccf9}\label{classsystem__sim_1_1image__consumer_a7a3db58321c0b528453d50a8695eccf9}} 
+def \mbox{\hyperlink{classsystem__sim_1_1image__consumer_a7a3db58321c0b528453d50a8695eccf9}{run}} (self)
+\begin{DoxyCompactList}\small\item\em Start thread. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__consumer_a6d10a70f5156b5b99844dbea0d879ebd}\label{classsystem__sim_1_1image__consumer_a6d10a70f5156b5b99844dbea0d879ebd}} 
+def \mbox{\hyperlink{classsystem__sim_1_1image__consumer_a6d10a70f5156b5b99844dbea0d879ebd}{join}} (self, timeout=None)
+\begin{DoxyCompactList}\small\item\em Join method to end thread activities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__consumer_a26b16a737ce98eae14d50a222591e147}\label{classsystem__sim_1_1image__consumer_a26b16a737ce98eae14d50a222591e147}} 
+{\bfseries classifier\+\_\+obj}
+\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__consumer_a11b3d55a09bf458609f2b015d9e48ae4}\label{classsystem__sim_1_1image__consumer_a11b3d55a09bf458609f2b015d9e48ae4}} 
+{\bfseries input\+\_\+q}
+\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__consumer_ab093177d3463d22db2238400c8f3bdad}\label{classsystem__sim_1_1image__consumer_ab093177d3463d22db2238400c8f3bdad}} 
+{\bfseries output\+\_\+q}
+\item 
+\mbox{\Hypertarget{classsystem__sim_1_1image__consumer_a353677860da29659f07c091340e23c19}\label{classsystem__sim_1_1image__consumer_a353677860da29659f07c091340e23c19}} 
+{\bfseries stop\+\_\+request}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Reads images from input image queue and puts resulting classification in the output label queue. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsystem__sim_1_1image__consumer_a525e8c9e9b3f00bb4fd4ad66389bebc4}\label{classsystem__sim_1_1image__consumer_a525e8c9e9b3f00bb4fd4ad66389bebc4}} 
+\index{system\+\_\+sim\+::image\+\_\+consumer@{system\+\_\+sim\+::image\+\_\+consumer}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!system\+\_\+sim\+::image\+\_\+consumer@{system\+\_\+sim\+::image\+\_\+consumer}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def system\+\_\+sim.\+image\+\_\+consumer.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{classifier\+\_\+obj,  }\item[{}]{input\+\_\+q,  }\item[{}]{output\+\_\+q }\end{DoxyParamCaption})}
+
+
+
+Class constructor. 
+
+Args\+: classifier\+\_\+obj\+: Classifier object; input\+\_\+q\+: Image queue; output\+\_\+q\+: Label output; 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+system\+\_\+sim.\+py\end{DoxyCompactItemize}

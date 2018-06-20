@@ -4,135 +4,102 @@ import os, time
 import threading, queue
 import classifier
 
+##  @package system_sim
+#
+#   Simulates the interaction between image capture and image classification
+#   threads.
 
-# Produz imagens para posterior classificação
-class produtor_de_imagem(threading.Thread):
-    """
-    Descrição da classe.
-    """
-    # Construtor de classe
-    def __init__(self,filename_list,output_q):
-        
-        # Inicializador da classe base
-        super(produtor_de_imagem,self).__init__()
+##  Reads image from selected source and put them in queue for classification.
+class image_producer(threading.Thread):
 
-        # Configura a comunicação da thread
-        self.filename_list = filename_list
+    ##  Class constructor
+    #   Args:
+    #            img_source: Path to images;  
+    #              output_q: Queue to put images as numpy array;
+    def __init__(self,img_source,output_q):
+      
+                                 
+        # Base class initialization
+        super(image_producer,self).__init__()
+
+        # Sets thread communication
+        self.filename_list = img_source
         self.output_q = output_q
         self.stop_request = threading.Event()
 
+    ##  Start thread
     def run(self):
-        # Enquanto o evento stop_request não está setado,
-        # tenta realizar sua tarefa
+
+        # Repeat task until stop_request is set.
         while (not self.stop_request.isSet()):
             
             try:
-                # Na aplicação, aqui aconteceria a captura da câmera
+                # TODO:
+                # Initialize device                
+                # Capture image from device
+                
+                # Iterates over filename list load each image
                 for filename in self.filename_list:
-
-                    # Aguarda 1 segundo, depois escreve a imagem na Queue
-                    time.sleep(1)
+                
+                    time.sleep(0.5)
+                    
+                    # Load image        
                     img = misc.imread(filename)
+                    # Color channel reductioin                    
                     img = img[:,:,0]
                     print(filename)
+                    # Puts image in output
                     self.output_q.put(img) 
             
             except queue.Empty:
                 continue
 
+    ## Join method to end thread activities
     def join(self, timeout=None):
         self.stop_request.set()
-        super(produtor_de_imagem,self).join(timeout)
+        super(image_producer,self).join(timeout)
     
-
-# Consome imagens para gerar classificação
-#
-
-class consumidor_de_imagem(threading.Thread):    
-    """
-    Desc. da classe.
-    """
-    # Construtor
+##  Reads images from input image queue and puts resulting classification
+#   in the output label queue
+class image_consumer(threading.Thread):    
+    
+    ##  Class constructor
+    #
+    #   Args:
+    #       classifier_obj: Classifier object;
+    #              input_q: Image queue;
+    #             output_q: Label output;
     def __init__(self,classifier_obj,input_q,output_q):
-        super(consumidor_de_imagem,self).__init__()
 
-        # A Thread deve possuir um classificador para 
-        # realizar sua tarefa
+
+        # Base class initialization                                          
+        super(image_consumer,self).__init__()
+
+        
         self.classifier_obj = classifier_obj
 
-        # Configura a comunicação da thread
+        # Thread communication
         self.input_q = input_q
         self.output_q = output_q
         self.stop_request = threading.Event()
- 
-
-
-    # A thread de classificação pega uma
-    # imagem carregada em np.array 
+    
+    ## Start thread  
     def run(self):
-        
-        # Enquanto o evento stop_request não está setado,
-        # tenta realizar sua tarefa
+
         while (not self.stop_request.isSet()):
-                
             try:   
                 image = self.input_q.get(True,0.05)
+                
                 label = self.classifier_obj.classify_img(image)
                 print(label)
+                
                 self.output_q.put(label)
                                 
             except queue.Empty:
                 continue    
-
-    # parada
+    
+    ## Join method to end thread activities
     def join(self, timeout=None):
+    
         self.stop_request.set()
-        super(consumidor_de_imagem,self).join(timeout)
-
-
-# Exibe as imagens sendo processadas pelo classificador
-class visualizador_de_imagem(threading.Thread):
-    
-    # Construtor
-    def __init__(self):
-        super(visualizador_de_imagem,self).__init__()
-        self.stop_request = threading.Event()
-        
-    # Tarefa da thread    
-    def run(self):
-        
-        while (not self.stop_request.isSet()):
-            try:
-                pass
-            except queue.Empty:
-                continue
-    
-    # parada    
-    def join(self,timeout=None):
-        self.stop_request.set()
-        super(consumidor,self).join(timeout)
-
-def main():
-    
-    # Comunicação entre as threads
-    image_q = queue.Queue()
-    label_q = queue.Queue()
-    
-    # Cria thread pool
-    thread_pool = []
-    thread_pool.append(produtor(filename_list, image_q))
-    thread_pool.append(consumidor(classificador,image_q, label_q))
-    
-    # Inicia threads
-    for t in thread_pool:
-        t.start()
-        
-    # Aguarda o fim da execução
-    for t in thread_pool:
-        t.join()
-    
-    
-    
-    
-    
-    
+        super(image_consumer,self).join(timeout)

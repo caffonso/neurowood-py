@@ -1,21 +1,35 @@
+import pickle
+
+import sklearn.neighbors as neighbors
+import sklearn.neural_network as neural_network
+import numpy as np
+from scipy import stats
+from ast import literal_eval as make_tuple
+
 import classifier
 import model
 import training_alg
 import ftr_extraction
 import img_processing
-import pickle
-import sklearn.neighbors as neighbors
-import sklearn.neural_network as neural_network
 
-from ast import literal_eval as make_tuple
+##  @package classifier_builder
+#   
+#   This module defines routines to manage classifier creation.
 
+##  Classifier builder class.
 class ClassifierBuilder(object):
     
-    #
+    ##  Class constructor
     def __init__(self):
         pass
     
 
+    ##  Load classifier from file.
+    #
+    #   Args:
+    #                   filepath: Classifier file;
+    #   Returns:
+    #             classifier_obj: Classifier object;
     #
     def load_classifier(self,filepath):
         file = open(filepath,'rb')
@@ -23,12 +37,25 @@ class ClassifierBuilder(object):
         file.close()
         return unpickled
 
+    ##  Save classifier to file
+    #
+    #   Args:
+    #                   filepath: Classifier file.
+    #   Returns:
+    #             classifier_obj: Classifier object
     #
     def save_classifier(self,filepath, classifier_obj):
         file = open(filepath,'wb')
         pickle.dump(classifier_obj, file)
         file.close()
+    
+    ##  Splits arguments taken from the parser.
     #
+    #   Args:
+    #                      args: Argument object.
+    #   Returns:
+    #            args_dict_list: A list of dictionaries, one for each object
+    #                            composing the classifier.
     def parse_arguments(self,args):
 
         # Cria uma lista vazia para retornar
@@ -71,17 +98,13 @@ class ClassifierBuilder(object):
         # Retorna a lista de dicionarios
         return param_dict_list
 
-    # Recebe um dicionario contendo os parâmetros para criação do modelo.
-    # Os modelos suportados e seus parâmetros configuráveis são:
-    #
-    #   - param['model']='knn'
-    #       - param['k']=int
-    #       - param['weights']='distance'
-    #
-    #   - param['model']='mlp'    
-    #       - param['hidden_layer_size']=(dim_0,dim_1)
-    #       
-    # Retorna um modelo pronto para ser treinado.
+    ##  Use pre parsed parameters to build specified classifier.
+    #  
+    #   Args:
+    #                    param: Parameters dicitonary list;
+    #   Returns:
+    #           classifier_obj: Model object;
+    #      
     def build_model_obj(self,param):
         # k-Nearest Neighbors
         if (param[0]['model'] == 'knn'):
@@ -97,19 +120,12 @@ class ClassifierBuilder(object):
         else:
             print("Invalid model type")
 
-    # Recebe uma lista de dicionarios, cada um contendo a informação
-    # para a construção de um extrator de características. Os possíveis
-    # extratores e seus parametros são:
-    #
-    #   - param['extractor']='glcm'
-    #       - param['axis']=[num_points,radius]
-    #
-    #   - param['extractor']='lbp'    
-    #       - param['numPoints']=int
-    #       - param['radius']=
-    #       - param['method']=
-    #       
-    # Retorna uma lista de objetos extratores de características.
+    ##  Handles feature extraction objects creation.
+    #   Args:
+    #               param_list: Parameters dicitonary list;
+    #   Returns: 
+    #              object_list: List of feature extraction objects;
+    #  
     def build_feature_extractor_obj(self,param_list):
 
         ftr_extractor_obj_list = []
@@ -130,7 +146,12 @@ class ClassifierBuilder(object):
                 print("Invalid extractor type")
         return ftr_extractor_obj_list
 
-
+    ## Handles image processing objects creation.
+    #   Args:
+    #               param_list: Parameters dicitonary list;
+    #   Returns: 
+    #              object_list: List of image processing objects;
+    #  
     def build_img_processing_obj(self, param_list):
         img_proc_obj_list = []
 
@@ -141,9 +162,12 @@ class ClassifierBuilder(object):
         return img_proc_obj_list
             
 
-    # Recebe uma lista de dicionários com parâmetros para instanciar cada objeto que irá compor o
-    # classificador.
-    # Retorna um objeto da classe classifier.Classifier(), pronto para uso
+    ##  Handles creation and bundling of Classifier object parts.
+    #   Args:
+    #                    param: Arguments dicitonary list;
+    #   Returns: 
+    #           classifier_obj: Classifier object ready for training;
+    #  
     def build_classifier(self,param):
         
         # Separa os parâmetros de criação para cada tipo de objeto que compõe o classificador

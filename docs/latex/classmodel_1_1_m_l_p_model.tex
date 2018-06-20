@@ -1,0 +1,64 @@
+\hypertarget{classmodel_1_1_m_l_p_model}{}\section{model.\+M\+L\+P\+Model Class Reference}
+\label{classmodel_1_1_m_l_p_model}\index{model.\+M\+L\+P\+Model@{model.\+M\+L\+P\+Model}}
+
+
+Multilayer Perceptron Classifier.  
+
+
+
+
+Inherits object.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{classmodel_1_1_m_l_p_model_af9eb7cda208eabb7ec7c91b7064d3769}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, hidden\+\_\+layer\+\_\+sizes, activation, solver, learning\+\_\+rate, learning\+\_\+rate\+\_\+init, max\+\_\+iter, tol, momentum)
+\begin{DoxyCompactList}\small\item\em Class constructor. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classmodel_1_1_m_l_p_model_a08d6099f82c8e7590f725d8be8d5f7a0}{train}} (self, X\+\_\+train, y\+\_\+train)
+\begin{DoxyCompactList}\small\item\em Train the model using provided data set. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmodel_1_1_m_l_p_model_aab400478633ca33e2b1507f7d8794579}\label{classmodel_1_1_m_l_p_model_aab400478633ca33e2b1507f7d8794579}} 
+def \mbox{\hyperlink{classmodel_1_1_m_l_p_model_aab400478633ca33e2b1507f7d8794579}{predict}} (self, sample)
+\begin{DoxyCompactList}\small\item\em Asks the model for a sample or a set of samples label prediction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmodel_1_1_m_l_p_model_a19e17c9cdc79b7d3d44a70a0624c94e4}\label{classmodel_1_1_m_l_p_model_a19e17c9cdc79b7d3d44a70a0624c94e4}} 
+{\bfseries model}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Multilayer Perceptron Classifier. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmodel_1_1_m_l_p_model_af9eb7cda208eabb7ec7c91b7064d3769}\label{classmodel_1_1_m_l_p_model_af9eb7cda208eabb7ec7c91b7064d3769}} 
+\index{model\+::\+M\+L\+P\+Model@{model\+::\+M\+L\+P\+Model}!\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+init\+\_\+\+\_\+@{\+\_\+\+\_\+init\+\_\+\+\_\+}!model\+::\+M\+L\+P\+Model@{model\+::\+M\+L\+P\+Model}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+init\+\_\+\+\_\+()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily def model.\+M\+L\+P\+Model.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{hidden\+\_\+layer\+\_\+sizes,  }\item[{}]{activation,  }\item[{}]{solver,  }\item[{}]{learning\+\_\+rate,  }\item[{}]{learning\+\_\+rate\+\_\+init,  }\item[{}]{max\+\_\+iter,  }\item[{}]{tol,  }\item[{}]{momentum }\end{DoxyParamCaption})}
+
+
+
+Class constructor. 
+
+For further model and parameters understanding, please check documentation\+: \href{http://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html}{\tt http\+://scikit-\/learn.\+org/stable/modules/generated/sklearn.\+neural\+\_\+network.\+M\+L\+P\+Classifier.\+html}
+
+Args\+: hidden\+\_\+layer\+\_\+sizes\+: Tuple of ints. The n-\/th element is the size of the n-\/th hidden layer; ~\newline
+ activation\+: Activation function; solver\+: Solver for weights optimization; learning\+\_\+rate\+: Weights optimization learning rate; learning\+\_\+rate\+\_\+init\+: Initial value for learning rate; max\+\_\+iter\+: Maximum allowed iterations; tol\+: Tolerance value to set convergence; momentum\+: Gradient descendent method parameter; 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmodel_1_1_m_l_p_model_a08d6099f82c8e7590f725d8be8d5f7a0}\label{classmodel_1_1_m_l_p_model_a08d6099f82c8e7590f725d8be8d5f7a0}} 
+\index{model\+::\+M\+L\+P\+Model@{model\+::\+M\+L\+P\+Model}!train@{train}}
+\index{train@{train}!model\+::\+M\+L\+P\+Model@{model\+::\+M\+L\+P\+Model}}
+\subsubsection{\texorpdfstring{train()}{train()}}
+{\footnotesize\ttfamily def model.\+M\+L\+P\+Model.\+train (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{X\+\_\+train,  }\item[{}]{y\+\_\+train }\end{DoxyParamCaption})}
+
+
+
+Train the model using provided data set. 
+
+Args\+: X\+\_\+train\+: Sample descriptors set. y\+\_\+train\+: Label set 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+model.\+py\end{DoxyCompactItemize}
