@@ -95,7 +95,7 @@ Por último selecione o local e nome do arquivo destino para salvar o classifica
 
 Selecione 'Start' para completar a criação. Em seguida, 'Edit' para selecionar a próxima ação.
 
-![Criação bem sucedida](docs/README/img08.pgn)
+![Criação bem sucedida](docs/README/img08.png)
 
 #### Train_Classifier: Treinando um classificador existente
 
