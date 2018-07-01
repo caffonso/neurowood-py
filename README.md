@@ -127,7 +127,7 @@ Exemplos de nomes inválidos:
 
 Após o treinamento, o classificador será armazenado num arquivo no mesmo diretório do original. O nome do arquivo será igual ao nome do arquivo do classificador orignial, com a extensão "trained", para indicar que está pronto para uso.
 
-![Saída treinamento](docs/README/img12.pgn)
+![Saída treinamento](docs/README/img12.png)
 
 #### Classification_Service
 
