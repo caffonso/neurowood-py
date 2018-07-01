@@ -43,7 +43,7 @@ class MLPModel(object):
     #              X_train: Sample descriptors set.
     #              y_train: Label set                            
     def train(self, X_train, y_train):
-        self.model.fit(self.X, self.y)
+        self.model.fit(X_train, y_train)
     
     ##  Asks the model for a sample or a set of samples label prediction
     def predict(self,sample):
@@ -71,9 +71,7 @@ class KNNModel(object):
     #              X_train: Sample descriptors set.
     #              y_train: Label set
     def train(self, X_train, y_train):
-        self.X = X_train
-        self.y = y_train
-        self.model.fit(self.X, self.y)
+        self.model.fit(X_train, y_train)
 
     ##  Asks the model for a sample or a set of samples label prediction        
     def predict(self,sample):

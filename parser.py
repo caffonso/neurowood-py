@@ -95,7 +95,9 @@ def gui_parser():
     parser_classification = subparser.add_parser(name='Classification_Service')
     parser_classification.set_defaults(wich='classification_service')
     parser_classification.add_argument('classifier_file',type=str,widget='FileChooser',help='Select previously trained classifier file')
-    parser_classification.add_argument('images_path',type=str,widget='DirChooser',help='Image source location')
+    parser_classification.add_argument('images_path',type=str,widget='DirChooser',help='Image source location',default='./images')
+    parser_classification.add_argument('video_capture_device',type=str,choices=['True','False'],help='Use video capture device as source',default='False')
+    parser_classification.add_argument('vcd_id',type=int,help='Video device index',default=0)
     
     args = parser.parse_args()
     return args

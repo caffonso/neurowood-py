@@ -32,6 +32,7 @@ def main():
         # Salva no caminho especificado
         filepath = os.path.join(args.output_folder,args.output_filename)
         builder.save_classifier(filepath, classifier)
+        print("Saved file %s" % filepath)
         
     elif (args.wich == 'train_classifier'):
         
@@ -58,17 +59,24 @@ def main():
         builder = bldr.ClassifierBuilder()
         classifier = builder.load_classifier(args.classifier_file)
         
-        # Acessa a origem das imagens
-        # Aqui deve acontecer o acesso à câmera        
+        # Acessa a origem das imagens     
         filename_list = os.listdir(args.images_path)
         full_path_filename_list = [os.path.join(args.images_path,filename) for filename in filename_list]
+        
+        if args.video_capture_device == 'True':
+            video_capture_device = True
+            vcd_id = args.vcd_id
+        else:
+            video_capture_device = False        
+
+
         # Comunicação entre as threads
         image_q = queue.Queue()
         label_q = queue.Queue()
         
         # Cria thread pool
         thread_pool = []
-        thread_pool.append(system_sim.image_producer(full_path_filename_list, image_q))
+        thread_pool.append(system_sim.image_producer(full_path_filename_list, image_q, video_capture_device))
         thread_pool.append(system_sim.image_consumer(classifier,image_q, label_q))
         
         # Inicia threads
